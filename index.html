@@ -4,10 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Multiplayer Tic Tac Toe</title>
+    <title>Tic-Tac-Toe Game</title>
 </head>
 <body>
-    <div id="board" class="board"></div>
+    <div class="main-container">
+        <h1>Welcome to Tic-Tac-Toe!</h1>
+        <div class="buttons-container">
+            <button onclick="startGame()">Start Game</button>
+            <button onclick="openSettings()">Settings</button>
+            <button onclick="navigateToLeaderboard()">Leaderboard</button>
+        </div>
+        <div class="login-container">
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+                <button type="button" onclick="login()">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#">Sign up</a></p>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
+
