@@ -1,39 +1,25 @@
-const socket = new WebSocket("wss://your-replit-server-url");
-
-socket.addEventListener("message", (event) => {
-    const data = JSON.parse(event.data);
-    handleMove(data.row, data.col, data.symbol);
-});
-
-function handleMove(row, col, symbol) {
-    const cell = document.getElementById(`cell-${row}-${col}`);
-    cell.textContent = symbol;
-    cell.disabled = true;
+function startGame() {
+    // Add logic to start the tic-tac-toe game
+    console.log("Game started!");
 }
 
-function handleClick(row, col) {
-    if (!document.getElementById(`cell-${row}-${col}`).disabled) {
-        const symbol = prompt("Enter X or O:");
-        if (symbol === "X" || symbol === "O") {
-            socket.send(JSON.stringify({ row, col, symbol }));
-        } else {
-            alert("Invalid symbol. Please enter X or O.");
-        }
-    } else {
-        alert("This cell is already taken. Choose another one.");
-    }
+function openSettings() {
+    // Add logic to open settings
+    console.log("Settings opened!");
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    const board = document.getElementById("board");
+function navigateToLeaderboard() {
+    // Add logic to navigate to the leaderboard page
+    console.log("Navigating to leaderboard");
+}
 
-    for (let row = 0; row < 3; row++) {
-        for (let col = 0; col < 3; col++) {
-            const cell = document.createElement("button");
-            cell.id = `cell-${row}-${col}`;
-            cell.className = "cell";
-            cell.addEventListener("click", () => handleClick(row, col));
-            board.appendChild(cell);
-        }
-    }
-});
+function login() {
+    // Add logic to handle user login
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Add validation and backend logic for authentication
+
+    console.log(`User ${username} logged in`);
+}
+
